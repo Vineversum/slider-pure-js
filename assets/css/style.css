@@ -52,7 +52,20 @@ body {
         color: white; }
 
 @media (max-width: 768px) {
+  .slider-controls {
+    bottom: 50%; }
   .slider-indicators i {
     font-size: 20px; }
   .slider-controls i {
-    font-size: 30px; } }
+    font-size: 30px;
+    position: absolute;
+    margin: 0; }
+    .slider-controls i:first-child {
+      left: 5px; }
+    .slider-controls i:last-child {
+      right: 5px; }
+    .slider-controls i:nth-child(2) {
+      right: calc(50% - 15px);
+      left: calc(50% - 15px); }
+    .slider-controls i .fa-pause {
+      opacity: 0; } }

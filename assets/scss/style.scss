@@ -63,11 +63,28 @@ body {
 }
 
 @media (max-width: 768px) {
-    
+    .slider-controls {
+        bottom: 50%;
+    }
     .slider-indicators i {
         font-size: 20px;
     }
     .slider-controls i {
         font-size: 30px;
+        position: absolute;
+        margin: 0;
+        &:first-child {
+            left: 5px;
+        }
+        &:last-child {
+            right: 5px;
+        }
+        &:nth-child(2) {
+            right: calc(50% - 15px);
+            left: calc(50% - 15px);
+        }
+        .fa-pause {
+            opacity: 0;
+        }
     }
 }
