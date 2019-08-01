@@ -10,11 +10,11 @@
 </head>
 <body>
     <div class="slider" id="slider">
-        <div style="background-image: url('assets/img/slide1.jpg')" alt="img" class="slider-item current-slide"></div>
-        <div style="background-image: url('assets/img/slide2.jpg')" alt="img" class="slider-item next-slide"></div>
-        <div style="background-image: url('assets/img/slide3.jpg')" alt="img" class="slider-item"></div>
-        <div style="background-image: url('assets/img/slide4.jpg')" alt="img" class="slider-item"></div>
-        <div style="background-image: url('assets/img/slide5.jpg')" alt="img" class="slider-item previous-slide"></div>
+        <div class="slider-item" style="background-image: url('assets/img/slide1.jpg')"></div>
+        <div class="slider-item" style="background-image: url('assets/img/slide2.jpg')"></div>
+        <div class="slider-item" style="background-image: url('assets/img/slide3.jpg')"></div>
+        <div class="slider-item" style="background-image: url('assets/img/slide4.jpg')"></div>
+        <div class="slider-item" style="background-image: url('assets/img/slide5.jpg')"></div>
         <div class="slider-indicators">
             <i class="fas fa-circle indicator"></i>
             <i class="far fa-circle indicator"></i>
@@ -23,13 +23,15 @@
             <i class="far fa-circle indicator"></i>
         </div>
         <div class="slider-controls">
-            <i class="fas fa-backward"></i>
-            <i class="fas fa-pause"></i>
+            <i class="fas fa-backward" id="previous-btn"></i>
+            <i class="fas fa-pause" id="play-pause"></i>
             <!-- <i class="fas fa-play"></i> -->
-            <i class="fas fa-forward"></i>
+            <i class="fas fa-forward" id="next-btn"></i>
         </div>
     </div>
 
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+
+<!-- style="background-image: url('assets/img/slide1.jpg')" -->
