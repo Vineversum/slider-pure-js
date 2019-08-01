@@ -19,11 +19,11 @@ let slideInterval = setInterval(showNextSlide, delay); //запускаем сл
 
 
 function showNextSlide() { //следующий слайд
-    goToSlide(currentSlide + 1, 'toRight');
+    goToSlide(currentSlide + 1, 'toLeft');
 };
 
 function showPreviousSlide() { //предыдущий слайд
-    goToSlide(currentSlide - 1, 'toLeft');
+    goToSlide(currentSlide - 1, 'toRight');
 };
 
 function goToSlide(n, direction) { //переход на n-ый слайд, анимируем переход в зависимости от направления
@@ -67,14 +67,14 @@ function goToSlide(n, direction) { //переход на n-ый слайд, ан
 };
 
 
-playPauseBtn.onclick = function(){ //по нажатию на кнопку воспроизведения/паузы останавливаем или запускаем слайдер 
+playPauseBtn.addEventListener('click', function(){ //по нажатию на кнопку воспроизведения/паузы останавливаем или запускаем слайдер 
     if (playing) {
         pauseSlideshow();
     }
     else {
         playSlideshow();
     }
-};
+});
 
 function pauseSlideshow(){ //функция паузы
     playing = false;
@@ -88,17 +88,17 @@ function playSlideshow() { //функция воспроизведения
     slideInterval = setInterval(showNextSlide, delay);
 };
 
-nextBtn.onclick = function() {
+nextBtn.addEventListener('click', function() {
     pauseSlideshow();
     showNextSlide();
-};
+});
 
-previousBtn.onclick = function() {
+previousBtn.addEventListener ('click', function() {
     pauseSlideshow();
     showPreviousSlide();
-}
+});
 
-indicatorsContainer.onclick = function(event){ //обработка события при помощи делегирования
+indicatorsContainer.addEventListener ('click', function(event){ //обработка события при помощи делегирования
     let target = event.target;
     pauseSlideshow();
     while (target != this) {
@@ -112,7 +112,7 @@ indicatorsContainer.onclick = function(event){ //обработка событи
         }
         target = target.parentNode;
     }
-}
+});
 
 document.addEventListener('keydown', keyNavigation); //обрабатываем нажатие кнопки
 
@@ -127,8 +127,7 @@ function keyNavigation(event) {
         showNextSlide();
     }
     if (event.keyCode === 32) { //пробел
-        playPauseBtn.onclick();
-    }
-
-         
-}
+        if (playing) pauseSlideshow();
+        else playSlideshow();
+    }       
+};
