@@ -50,3 +50,9 @@ body {
         color: white; }
       .slider-indicators i.fas {
         color: white; }
+
+@media (max-width: 768px) {
+  .slider-indicators i {
+    font-size: 20px; }
+  .slider-controls i {
+    font-size: 30px; } }
