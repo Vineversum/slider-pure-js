@@ -105,8 +105,8 @@ indicatorsContainer.addEventListener ('click', function(event){ //обработ
         if (target.tagName === 'I') {
             for (let i = 0; i < indicators.length; i++){   //на какой индикатор нажали?
                 if (indicators[i] === target) {
-                    if (i > currentSlide) goToSlide(i, 'toRight');
-                    else goToSlide(i, 'toLeft');
+                    if (i > currentSlide) goToSlide(i, 'toLeft');
+                    else goToSlide(i, 'toRight');
                 }
             }
         }
